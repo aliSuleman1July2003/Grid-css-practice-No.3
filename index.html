@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid</title>
+    <style>
+
+        /* body */
+        body{ 
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+/*  mother grid */
+
+        .mother-grid{ 
+           display: grid;
+           grid-template-areas: "navbar navbar navbar"
+           "left-card sectiona right-card"
+           "left-card sectionb right-card"
+           "footer footer footer";
+
+        }
+
+        /*  navbar styling  */
+
+        #navbar{ 
+            grid-area: navbar;
+        }
+      
+
+        #navbar ul{ 
+            display: grid;
+            grid-template-columns: repeat(4, 200px);
+            grid-template-rows: 70px;
+            justify-content: space-around;
+            list-style-type: none;
+            background-color: #000000;
+             align-items:center;
+        }
+
+         #navbar a { 
+            text-decoration: none;
+            color: #ffffff;
+            font-family: monospace, sans-serif, helvetica;
+            font-weight: 700;
+    
+         }
+
+
+         /* left-card */
+
+         .left-card{
+grid-area: left-card;
+background-color: #000000;
+margin-right:1rem;
+
+         }
+
+         .left-card h2{ 
+            padding-left: 1rem;
+             padding-right: 1rem;
+              background-color: #272727;
+             border-radius: 1rem;
+         }
+
+          .left-card a { 
+text-decoration: none;
+color: #fff;
+         }
+
+          /*right-card */
+
+         .right-card{
+grid-area: right-card;
+background-color: #000000;
+margin-left:1rem;
+         }
+
+         .right-card h2{ 
+            padding-left: 1rem;
+             padding-right: 1rem;
+             background-color: #272727;
+             border-radius: 1rem;
+         }
+
+          .right-card a { 
+text-decoration: none;
+color: #fff;
+         }
+
+         /* section */
+.sectiona-cards{ 
+   margin-bottom: 1rem;
+}
+
+.sectiona-cards button{ 
+  border-radius: 1rem;
+}
+
+.sectionb-cards button{ 
+  border-radius: 1rem;
+}
+
+.sectionb-cards{ 
+margin-bottom: 1rem;
+}
+         /*  sectiona  */
+
+
+
+         .sectiona{ 
+            grid-area: sectiona;
+            display: grid;
+            grid-template-columns: repeat(3, 280px);
+           column-gap:2rem;
+          margin-bottom: 1rem;
+           
+         }
+
+         .sectiona-cards{
+border: 0.12rem ridge #000000;
+border-radius: 1rem;
+padding: 0.8rem;
+background-color: #181818;
+color: #ffffff;
+
+         }
+
+         .sectiona-cards img{ 
+            height: 200px;
+            width:250px;
+            border-radius: 1rem;
+            
+         }
+
+         .sectiona-cards button {
+            background-color: #000000;
+         }
+
+         .sectiona-cards button a { 
+             text-decoration: none;
+            color: #ffffff;
+         }
+
+         /* section b  */
+
+         .sectionb{ 
+            grid-area: sectionb;
+            display: grid;
+            grid-template-columns: repeat(3, 280px);
+           column-gap:2rem;
+           
+         }
+
+         .sectionb-cards{
+border: 0.12rem ridge #000000;
+border-radius: 1rem;
+padding: 0.8rem;
+background-color: #181818;
+color: #ffffff;
+
+         }
+
+         .sectionb-cards img{ 
+            height: 200px;
+            width:250px;
+            border-radius: 1rem;
+            
+         }
+
+         .sectionb-cards button {
+            background-color: #000000;
+         }
+
+         .sectionb-cards button a { 
+             text-decoration: none;
+            color: #ffffff;
+         }
+
+
+
+         /* footer */
+
+          #footer{ 
+            grid-area:footer;
+        }
+
+        #footer ul{ 
+            display: grid;
+            grid-template-columns: repeat(4, 200px);
+            grid-template-rows: 70px;
+            justify-content: space-around;
+            list-style-type: none;
+            background-color: #000000;
+             align-items:center;
+        }
+
+         #footer a { 
+            text-decoration: none;
+            color: #ffffff;
+            font-family: monospace, sans-serif, helvetica;
+            font-weight: 700;
+          
+         }
+
+         /*  media query make one column and multiple rows */
+         /*  computers */
+@media screen and (max-width:1050px) { 
+    .sectiona{ 
+            grid-area: sectiona;
+            display: grid;
+            grid-template-columns: repeat(2, 280px);
+           column-gap:2rem;
+           
+         }
+
+         .sectionb{ 
+            grid-area: sectionb;
+            display: grid;
+            grid-template-columns: repeat(2, 280px);
+           column-gap:2rem;
+           
+         }
+}
+
+/*  laptops */
+
+@media screen and (min-width:806px) and (max-width:883px) { 
+
+
+    .sectiona{ 
+            grid-area: sectiona;
+            display: grid;
+            grid-template-columns: repeat(2, 200px);
+           column-gap:2rem;
+          column-gap:0.5rem;
+         }
+
+         
+         .sectiona-cards img{ 
+            height: 200px;
+            width:175px;
+            border-radius: 1rem;
+            
+         }
+
+         .sectionb{ 
+            grid-area: sectionb;
+            display: grid;
+            grid-template-columns: repeat(2, 200px);
+           column-gap:0.5rem;
+          
+         }
+
+         
+         .sectionb-cards img{ 
+            height: 200px;
+            width:175px;
+            border-radius: 1rem;
+            
+         }
+
+           .right-card{
+width: 8rem;
+margin:initial;
+         }
+
+           .left-card{
+width: 8rem;
+margin:initial;
+         }
+
+}
+
+/*  tablets */
+
+@media screen and (min-width:620px) and (max-width:806px) { 
+
+
+    .mother-grid{ 
+            display: grid;
+            grid-template-areas: "navbar"
+            "sectiona"
+             "sectionb"
+            "left-card"
+             "right-card"
+            "footer";
+
+        }
+
+        .left-card,
+        .right-card{ 
+           margin:initial;
+           margin-top:1rem;
+           margin-bottom:1rem;
+        }
+
+        #navbar ul,
+        #footer ul{ 
+        display: grid;
+            grid-template-columns: repeat(1, 300px);
+            grid-template-rows: auto;
+            justify-content: start;
+            list-style-type: none;
+            background-color: #000000;
+             align-items:start;
+             font-weight: 700;
+             font-size: x-large;
+             border-radius: initial;
+        }
+
+          .left-card h2,
+        .right-card h2{ 
+             border-radius: initial;
+             background-color: rgb(11, 11, 11);
+        }
+
+}
+
+/*  mobiles */
+
+
+@media screen and (min-width:286px) and (max-width:619px) { 
+
+
+    .mother-grid{ 
+            display: grid;
+            grid-template-areas: "navbar"
+            "sectiona"
+             "sectionb"
+            "left-card"
+             "right-card"
+            "footer";
+
+        }
+
+         .sectiona{ 
+            grid-area: sectiona;
+            display: grid;
+            grid-template-columns: repeat(1, 280px);
+           column-gap:2rem;
+          margin-bottom: 1rem;
+           
+         }
+
+
+          .sectionb{ 
+            grid-area: sectionb;
+            display: grid;
+            grid-template-columns: repeat(1, 280px);
+           column-gap:2rem;
+          margin-bottom: 1rem;
+           
+         }
+
+        .left-card,
+        .right-card{ 
+           margin:initial;
+           margin-top:1rem;
+           margin-bottom:1rem;
+          font-size: 0.5rem;
+        }
+
+        #navbar ul,
+        #footer ul{ 
+        display: grid;
+            grid-template-columns: repeat(1, 300px);
+            grid-template-rows: auto;
+            justify-content: start;
+            list-style-type: none;
+            background-color: #000000;
+             align-items:start;
+             font-weight: 700;
+             font-size: x-large;
+             border-radius: initial;
+        }
+
+          .left-card h2,
+        .right-card h2{ 
+             border-radius: initial;
+             background-color: rgb(11, 11, 11);
+        }
+
+}
+
+/* mini internet mobile */
+@media screen and (max-width:285px) { 
+
+
+    .mother-grid{ 
+            display: grid;
+            grid-template-areas: "navbar"
+            "sectiona"
+             "sectionb"
+            "left-card"
+             "right-card"
+            "footer";
+
+        }
+
+         .sectiona{ 
+            grid-area: sectiona;
+            display: grid;
+            grid-template-columns: repeat(1, 150px);
+            column-gap:2rem;
+          margin-bottom: 1rem;
+          
+           
+         }
+
+
+          .sectionb{ 
+            grid-area: sectionb;
+            display: grid;
+            grid-template-columns: repeat(1, 150px);
+         column-gap:2rem;
+          margin-bottom: 1rem;
+           
+         }
+
+         .sectiona img{ 
+            width: 125px;
+         }
+
+          .sectionb img{ 
+            width: 125px;
+         }
+
+        .left-card,
+        .right-card{ 
+           margin:initial;
+           margin-top:1rem;
+           margin-bottom:1rem;
+          font-size: 0.4rem;
+        }
+
+        #navbar ul,
+        #footer ul{ 
+        display: grid;
+            grid-template-columns: repeat(1, 300px);
+            grid-template-rows: auto;
+            justify-content: start;
+            list-style-type: none;
+            background-color: #000000;
+             align-items:start;
+             font-weight: 700;
+             font-size: small;
+             border-radius: initial;
+        }
+
+          .left-card h2,
+        .right-card h2{ 
+             border-radius: initial;
+             background-color: rgb(11, 11, 11);
+        }
+
+}
+
+
+       
+
+
+    </style>
+</head>
+<body>
+    
+<div class="mother-grid">
+    <!--  navbar -->
+<div id="navbar">
+    <ul>
+        <li><a href="">Products</a></li>
+        <li><a href="">Services</a></li>
+        <li><a href="">Contact us</a></li>
+        <li><a href="">About us</a></li>
+    </ul>
+</div>
+
+
+
+<!--  left card -->
+
+<div class="left-card">
+    <h2><a href="">Your Payment Support</a></h2>
+    <h2><a href="">Return Money Rules </a></h2>
+    <h2><a href="">Your Data & Privacy</a></h2>
+</div>
+
+<!--  right card -->
+
+<div class="right-card">
+    <h2><a href="">ham ye courses kiyu buy karein</a></h2>
+    <h2><a href="">hamy kiya faida ho ga </a></h2>
+    <h2><a href="">aur aap kiya de rahy hain</a></h2>
+</div>
+
+
+
+<!--  section a -->
+
+<div class="sectiona">
+
+
+
+<!-- 1 -->
+<div class="sectiona-cards">
+    <img src="sky.jpg" alt="sky painting image">
+    <h3>Hand made painting</h3>
+    <p>best art</p>
+    <p>prize: 1000Pkr</p>
+    <button><a href="">Buy now</a></button>
+</div>
+
+<!-- 2 -->
+<div class="sectiona-cards">
+    <img src="sky.jpg" alt="sky painting image">
+    <h3>Hand made painting</h3>
+    <p>best art</p>
+    <p>prize: 1000Pkr</p>
+    <button><a href="">Buy now</a></button>
+</div>
+
+<!-- 3 -->
+<div class="sectiona-cards">
+    <img src="sky.jpg" alt="sky painting image">
+    <h3>Hand made painting</h3>
+    <p>best art</p>
+    <p>prize: 1000Pkr</p>
+    <button><a href="">Buy now</a></button>
+</div>
+
+<!-- 4 -->
+<div class="sectiona-cards">
+    <img src="sky.jpg" alt="sky painting image">
+    <h3>Hand made painting</h3>
+    <p>best art</p>
+    <p>prize: 1000Pkr</p>
+    <button><a href="">Buy now</a></button>
+</div>
+
+</div>
+
+<!-- section b -->
+
+<div class="sectionb">
+
+
+
+<!-- 1 -->
+<div class="sectionb-cards">
+    <img src="sky2.webp" alt="sky painting image">
+    <h3>Hand made painting</h3>
+    <p>best art</p>
+    <p>prize: 1000Pkr</p>
+    <button><a href="">Buy now</a></button>
+</div>
+
+<!-- 2 -->
+<div class="sectionb-cards">
+    <img src="sky2.webp" alt="sky painting image">
+    <h3>Hand made painting</h3>
+    <p>best art</p>
+    <p>prize: 1000Pkr</p>
+    <button><a href="">Buy now</a></button>
+</div>
+
+<!-- 3 -->
+<div class="sectionb-cards">
+    <img src="sky2.webp" alt="sky painting image">
+    <h3>Hand made painting</h3>
+    <p>best art</p>
+    <p>prize: 1000Pkr</p>
+    <button><a href="">Buy now</a></button>
+</div>
+
+<!-- 4 -->
+<div class="sectionb-cards">
+    <img src="sky2.webp" alt="sky painting image">
+    <h3>Hand made painting</h3>
+    <p>best art</p>
+    <p>prize: 1000Pkr</p>
+    <button><a href="">Buy now</a></button>
+</div>
+
+</div>
+
+<!-- footer -->
+<footer id="footer">
+    <ul>
+        <li><a href="">youtube</a></li>
+        <li><a href="">instagram</a></li>
+        <li><a href="">tiktok</a></li>
+        <li><a href="">facebook</a></li>
+    </ul>
+</footer>
+
+</div>
+
+</body>
+</html>
